@@ -189,7 +189,7 @@ protected:
     const char* getDescription() const override { return "Outdoor spaces: fjords, canyons, valleys, forests and a stepped amphitheatre, with a canopy you can pull over the sky."; }
     const char* getMaker()       const override { return DISTRHO_PLUGIN_BRAND; }
     const char* getLicense()     const override { return "GPL-3.0-or-later"; }
-    uint32_t    getVersion()     const override { return d_version(1, 0, 8); }   // = lv2:minorVersion 2, microVersion 8
+    uint32_t    getVersion()     const override { return d_version(1, 0, 9); }   // = lv2:minorVersion 2, microVersion 9
     int64_t     getUniqueId()    const override { return d_cconst('n', 'O', 'u', 'r'); }
 
     void initParameter(uint32_t index, Parameter& p) override

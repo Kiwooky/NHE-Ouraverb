@@ -14,7 +14,7 @@
     doap:maintainer [ foaf:name "New Horizon" ] ;
     rdfs:comment "Outdoor spaces: fjords, canyons, valleys, forests and a stepped amphitheatre, with a canopy you can pull over the sky." ;
     lv2:minorVersion 2 ;
-    lv2:microVersion 8 ;
+    lv2:microVersion 9 ;
     lv2:optionalFeature lv2:hardRTCapable ;
     lv2:requiredFeature <http://lv2plug.in/ns/ext/options#options> ,
                         <http://lv2plug.in/ns/ext/urid#map> ;
@@ -169,20 +169,24 @@
 
 <urn:mod-cookbook:nhe-ouraverb#portGroup_location>
     a pg:InputGroup ;
+    lv2:index 0 ;          # MOD sorts groups by this, else alphabetically
     lv2:name "Location" ;
     lv2:symbol "location" .
 
 <urn:mod-cookbook:nhe-ouraverb#portGroup_distance>
     a pg:InputGroup ;
+    lv2:index 1 ;          # MOD sorts groups by this, else alphabetically
     lv2:name "Distance" ;
     lv2:symbol "distance" .
 
 <urn:mod-cookbook:nhe-ouraverb#portGroup_cover>
     a pg:InputGroup ;
+    lv2:index 2 ;          # MOD sorts groups by this, else alphabetically
     lv2:name "Cover" ;
     lv2:symbol "cover" .
 
 <urn:mod-cookbook:nhe-ouraverb#portGroup_mix>
     a pg:InputGroup ;
+    lv2:index 3 ;          # MOD sorts groups by this, else alphabetically
     lv2:name "Mix" ;
     lv2:symbol "mix" .
