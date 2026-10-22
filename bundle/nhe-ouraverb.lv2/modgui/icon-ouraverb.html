@@ -1,0 +1,47 @@
+<div class="mod-pedal ouraverb{{{cns}}}">
+    <div mod-role="drag-handle" class="mod-drag-handle"></div>
+
+    <!-- the orbital display, on top of the orb in the panel art. Bottom to top:
+         cover (Ceiling cover = size, Cover density = opacity), dynamics (Input Level), height (Cover height = opacity) -->
+    <div class="ov-orbit">
+        <div class="ov-orbit-layer ov-orbit-cover"></div>
+        <div class="ov-orbit-layer ov-orbit-dynamics"></div>
+        <div class="ov-orbit-layer ov-orbit-height"></div>
+    </div>
+
+    <!-- sliders: script-driven, drag or click anywhere along the track -->
+    <div class="ov-track ov-track-cover" title="Ceiling cover" ov-slider="cover"><div class="ov-cap"></div></div>
+    <div class="ov-track ov-track-cdensity" title="Cover density" ov-slider="cover_density"><div class="ov-cap"></div></div>
+
+    <!-- Place: OU steps it, the readout names it -->
+    <div class="ov-btn" title="Place: Fjord, Canyon, Valley, Forest, Colosseum" ov-step="place"></div>
+    <div class="ov-readout"><div class="ov-text"></div></div>
+
+    <!-- knobs: 128-frame strip -->
+    <div class="ov-knob ov-tone"    title="Tone: warm .. bright" mod-role="input-control-port" mod-port-symbol="tone"></div>
+    <div class="ov-knob ov-mix"     title="Mix"          mod-role="input-control-port" mod-port-symbol="mix"></div>
+    <div class="ov-knob ov-expanse" title="Expanse"      mod-role="input-control-port" mod-port-symbol="expanse"></div>
+    <div class="ov-knob ov-surface" title="Surface"      mod-role="input-control-port" mod-port-symbol="surface"></div>
+    <div class="ov-knob ov-air"     title="Air"          mod-role="input-control-port" mod-port-symbol="air"></div>
+    <div class="ov-knob ov-bounce"  title="Bounce"       mod-role="input-control-port" mod-port-symbol="bounce"></div>
+    <div class="ov-knob ov-height"  title="Cover height" mod-role="input-control-port" mod-port-symbol="cover_height"></div>
+
+    <div class="ov-led ov-tails" title="Tails: the echoes ring out in bypass" mod-widget="switch" mod-role="input-control-port" mod-port-symbol="tails"></div>
+    <div class="ov-led ov-onoff" mod-role="bypass-light"></div>
+    <div class="ov-fs" title="On/Off" mod-role="bypass"></div>
+
+    <div class="mod-pedal-input">
+        {{#effect.ports.audio.input}}
+        <div class="mod-input mod-input-disconnected" title="{{name}}" mod-role="input-audio-port" mod-port-symbol="{{symbol}}">
+            <div class="mod-pedal-input-image"></div>
+        </div>
+        {{/effect.ports.audio.input}}
+    </div>
+    <div class="mod-pedal-output">
+        {{#effect.ports.audio.output}}
+        <div class="mod-output mod-output-disconnected" title="{{name}}" mod-role="output-audio-port" mod-port-symbol="{{symbol}}">
+            <div class="mod-pedal-output-image"></div>
+        </div>
+        {{/effect.ports.audio.output}}
+    </div>
+</div>

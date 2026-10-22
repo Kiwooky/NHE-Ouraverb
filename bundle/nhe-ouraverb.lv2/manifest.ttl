@@ -1,0 +1,79 @@
+@prefix lv2:  <http://lv2plug.in/ns/lv2core#> .
+@prefix pset: <http://lv2plug.in/ns/ext/presets#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<urn:mod-cookbook:nhe-ouraverb>
+    a lv2:Plugin , lv2:ReverbPlugin ;
+    lv2:binary <nhe-ouraverb_dsp.so> ;
+    rdfs:seeAlso <nhe-ouraverb.ttl> , <modgui.ttl> .
+
+# Factory presets
+<urn:mod-cookbook:nhe-ouraverb#preset-fjord-under-sail>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb> ;
+    rdfs:seeAlso <presets.ttl> .
+
+<urn:mod-cookbook:nhe-ouraverb#preset-inner-city>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb> ;
+    rdfs:seeAlso <presets.ttl> .
+
+<urn:mod-cookbook:nhe-ouraverb#preset-box-canyon>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb> ;
+    rdfs:seeAlso <presets.ttl> .
+
+<urn:mod-cookbook:nhe-ouraverb#preset-quarry>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb> ;
+    rdfs:seeAlso <presets.ttl> .
+
+<urn:mod-cookbook:nhe-ouraverb#preset-rainforest>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb> ;
+    rdfs:seeAlso <presets.ttl> .
+
+<urn:mod-cookbook:nhe-ouraverb#preset-snowfield>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb> ;
+    rdfs:seeAlso <presets.ttl> .
+
+<urn:mod-cookbook:nhe-ouraverb#preset-ice-cathedral>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb> ;
+    rdfs:seeAlso <presets.ttl> .
+
+<urn:mod-cookbook:nhe-ouraverb#preset-drone-fjord>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb> ;
+    rdfs:seeAlso <presets.ttl> .
+
+<urn:mod-cookbook:nhe-ouraverb#preset-pompeii-arena>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb> ;
+    rdfs:seeAlso <presets.ttl> .
+
+<urn:mod-cookbook:nhe-ouraverb#preset-epidaurus>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb> ;
+    rdfs:seeAlso <presets.ttl> .
+
+<urn:mod-cookbook:nhe-ouraverb#preset-konigssee>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb> ;
+    rdfs:seeAlso <presets.ttl> .
+
+<urn:mod-cookbook:nhe-ouraverb#preset-hill-country>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb> ;
+    rdfs:seeAlso <presets.ttl> .
+
+<urn:mod-cookbook:nhe-ouraverb#preset-bottom-of-the-well>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb> ;
+    rdfs:seeAlso <presets.ttl> .
+
+<urn:mod-cookbook:nhe-ouraverb#preset-testing-booth>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb> ;
+    rdfs:seeAlso <presets.ttl> .

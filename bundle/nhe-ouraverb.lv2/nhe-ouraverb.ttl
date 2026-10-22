@@ -1,0 +1,188 @@
+@prefix doap:   <http://usefulinc.com/ns/doap#> .
+@prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+@prefix pg:     <http://lv2plug.in/ns/ext/port-groups#> .
+@prefix pprops: <http://lv2plug.in/ns/ext/port-props#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix units:  <http://lv2plug.in/ns/extensions/units#> .
+
+<urn:mod-cookbook:nhe-ouraverb>
+    a lv2:Plugin , lv2:ReverbPlugin ;
+    doap:name "Ouraverb" ;
+    doap:license <http://spdx.org/licenses/GPL-3.0-or-later.html> ;
+    doap:maintainer [ foaf:name "New Horizon" ] ;
+    rdfs:comment "Outdoor spaces: fjords, canyons, valleys, forests and a stepped amphitheatre, with a canopy you can pull over the sky." ;
+    lv2:minorVersion 2 ;
+    lv2:microVersion 8 ;
+    lv2:optionalFeature lv2:hardRTCapable ;
+    lv2:requiredFeature <http://lv2plug.in/ns/ext/options#options> ,
+                        <http://lv2plug.in/ns/ext/urid#map> ;
+    lv2:extensionData <http://lv2plug.in/ns/ext/options#interface> ;
+    lv2:port
+    [
+        a lv2:InputPort , lv2:AudioPort ;
+        lv2:index 0 ;
+        lv2:symbol "in" ;
+        lv2:name "In"
+    ] , [
+        a lv2:OutputPort , lv2:AudioPort ;
+        lv2:index 1 ;
+        lv2:symbol "out_l" ;
+        lv2:name "Out L"
+    ] , [
+        a lv2:OutputPort , lv2:AudioPort ;
+        lv2:index 2 ;
+        lv2:symbol "out_r" ;
+        lv2:name "Out R"
+    ] , [
+        a lv2:InputPort , lv2:ControlPort ;
+        lv2:index 3 ;
+        lv2:symbol "place" ;
+        lv2:name "Place" ;
+        lv2:default 0 ;
+        lv2:minimum 0 ;
+        lv2:maximum 4 ;
+        lv2:portProperty lv2:integer , lv2:enumeration ;
+        lv2:scalePoint
+            [ rdfs:label "Fjord" ; rdf:value 0 ] ,
+            [ rdfs:label "Canyon" ; rdf:value 1 ] ,
+            [ rdfs:label "Valley" ; rdf:value 2 ] ,
+            [ rdfs:label "Forest" ; rdf:value 3 ] ,
+            [ rdfs:label "Colosseum" ; rdf:value 4 ] ;
+        pg:group <urn:mod-cookbook:nhe-ouraverb#portGroup_location>
+    ] , [
+        a lv2:InputPort , lv2:ControlPort ;
+        lv2:index 4 ;
+        lv2:symbol "expanse" ;
+        lv2:name "Expanse" ;
+        lv2:default 100 ;
+        lv2:minimum 2 ;
+        lv2:maximum 200 ;
+        lv2:portProperty pprops:logarithmic ;
+        units:unit units:pc ;
+        pg:group <urn:mod-cookbook:nhe-ouraverb#portGroup_location>
+    ] , [
+        a lv2:InputPort , lv2:ControlPort ;
+        lv2:index 5 ;
+        lv2:symbol "surface" ;
+        lv2:name "Surface" ;
+        lv2:default 8 ;
+        lv2:minimum 0 ;
+        lv2:maximum 10 ;
+        pg:group <urn:mod-cookbook:nhe-ouraverb#portGroup_location>
+    ] , [
+        a lv2:InputPort , lv2:ControlPort ;
+        lv2:index 6 ;
+        lv2:symbol "air" ;
+        lv2:name "Air" ;
+        lv2:default 5 ;
+        lv2:minimum 0 ;
+        lv2:maximum 10 ;
+        pg:group <urn:mod-cookbook:nhe-ouraverb#portGroup_distance>
+    ] , [
+        a lv2:InputPort , lv2:ControlPort ;
+        lv2:index 7 ;
+        lv2:symbol "bounce" ;
+        lv2:name "Bounce" ;
+        lv2:default 4 ;
+        lv2:minimum 0 ;
+        lv2:maximum 10 ;
+        pg:group <urn:mod-cookbook:nhe-ouraverb#portGroup_distance>
+    ] , [
+        a lv2:InputPort , lv2:ControlPort ;
+        lv2:index 8 ;
+        lv2:symbol "cover" ;
+        lv2:name "Cover" ;
+        lv2:default 0 ;
+        lv2:minimum 0 ;
+        lv2:maximum 100 ;
+        units:unit units:pc ;
+        pg:group <urn:mod-cookbook:nhe-ouraverb#portGroup_cover>
+    ] , [
+        a lv2:InputPort , lv2:ControlPort ;
+        lv2:index 9 ;
+        lv2:symbol "cover_density" ;
+        lv2:name "Cover density" ;
+        lv2:default 3 ;
+        lv2:minimum 0 ;
+        lv2:maximum 10 ;
+        pg:group <urn:mod-cookbook:nhe-ouraverb#portGroup_cover>
+    ] , [
+        a lv2:InputPort , lv2:ControlPort ;
+        lv2:index 10 ;
+        lv2:symbol "cover_height" ;
+        lv2:name "Cover height" ;
+        lv2:default 20 ;
+        lv2:minimum 1 ;
+        lv2:maximum 60 ;
+        lv2:portProperty pprops:logarithmic ;
+        units:unit [ a units:Unit ; rdfs:label "m" ; units:symbol "m" ; units:render "%f m" ] ;
+        pg:group <urn:mod-cookbook:nhe-ouraverb#portGroup_distance>
+    ] , [
+        a lv2:InputPort , lv2:ControlPort ;
+        lv2:index 11 ;
+        lv2:symbol "mix" ;
+        lv2:name "Mix" ;
+        lv2:default 35 ;
+        lv2:minimum 0 ;
+        lv2:maximum 100 ;
+        units:unit units:pc ;
+        pg:group <urn:mod-cookbook:nhe-ouraverb#portGroup_mix>
+    ] , [
+        a lv2:InputPort , lv2:ControlPort ;
+        lv2:index 12 ;
+        lv2:symbol "tone" ;
+        lv2:name "Tone" ;
+        lv2:default 5 ;
+        lv2:minimum 0 ;
+        lv2:maximum 10 ;
+        pg:group <urn:mod-cookbook:nhe-ouraverb#portGroup_distance>
+    ] , [
+        a lv2:InputPort , lv2:ControlPort ;
+        lv2:index 13 ;
+        lv2:symbol "tails" ;
+        lv2:name "Tails" ;
+        lv2:default 1 ;
+        lv2:minimum 0 ;
+        lv2:maximum 1 ;
+        lv2:portProperty lv2:integer , lv2:toggled ;
+        pg:group <urn:mod-cookbook:nhe-ouraverb#portGroup_mix>
+    ] , [
+        a lv2:OutputPort , lv2:ControlPort ;
+        lv2:index 14 ;
+        lv2:symbol "input_level" ;
+        lv2:name "Input Level" ;
+        lv2:minimum 0 ;
+        lv2:maximum 1
+    ] , [
+        a lv2:InputPort , lv2:ControlPort ;
+        lv2:index 15 ;
+        lv2:symbol "lv2_enabled" ;
+        lv2:name "Enabled" ;
+        lv2:default 1 ;
+        lv2:minimum 0 ;
+        lv2:maximum 1 ;
+        lv2:portProperty lv2:integer , lv2:toggled ;
+        lv2:designation lv2:enabled
+    ] .
+
+<urn:mod-cookbook:nhe-ouraverb#portGroup_location>
+    a pg:InputGroup ;
+    lv2:name "Location" ;
+    lv2:symbol "location" .
+
+<urn:mod-cookbook:nhe-ouraverb#portGroup_distance>
+    a pg:InputGroup ;
+    lv2:name "Distance" ;
+    lv2:symbol "distance" .
+
+<urn:mod-cookbook:nhe-ouraverb#portGroup_cover>
+    a pg:InputGroup ;
+    lv2:name "Cover" ;
+    lv2:symbol "cover" .
+
+<urn:mod-cookbook:nhe-ouraverb#portGroup_mix>
+    a pg:InputGroup ;
+    lv2:name "Mix" ;
+    lv2:symbol "mix" .

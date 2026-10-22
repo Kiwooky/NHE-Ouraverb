@@ -1,0 +1,64 @@
+/* Ouraverb - New Horizon Electronics (650 x 400 CSS px). Artwork by Niels.
+   Images are 2x, drawn at their 1x size; positions measured from the approved mockups. */
+.ouraverb{{{cns}}} {
+    position: absolute;
+    width: 650px;
+    height: 400px;
+    background-image: url(/resources/background.jpg{{{ns}}});
+    background-size: 650px 400px;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+}
+
+/* orbital display: 173 px layers over the orb in the panel */
+.ouraverb{{{cns}}} .ov-orbit { position: absolute; left: 436px; top: 124px; width: 173px; height: 173px; z-index: 18; pointer-events: none; }
+/* Each layer stays on its own compositor layer for good (will-change, hidden backface). Without
+   that, the browser promotes a layer while it fades and drops it after, re-rendering the panel
+   underneath each time, which reads as the whole pedal flickering and dimming with the ripples */
+.ouraverb{{{cns}}} .ov-orbit-layer { position: absolute; left: 0; top: 0; width: 173px; height: 173px; background-size: 173px 173px; background-repeat: no-repeat; opacity: 0;
+    will-change: opacity; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+.ouraverb{{{cns}}} .ov-orbit-cover    { background-image: url(/resources/orbit-cover.png{{{ns}}}); transform: scale(0); -webkit-transform: scale(0); transition: opacity .1s linear, transform .1s linear; will-change: opacity, transform; }
+.ouraverb{{{cns}}} .ov-orbit-dynamics { background-image: url(/resources/orbit-dynamics.png{{{ns}}}); transition: opacity .12s linear; }
+.ouraverb{{{cns}}} .ov-orbit-height   { background-image: url(/resources/orbit-height.png{{{ns}}}); transition: opacity .1s linear; opacity: .39; }   /* 20 m */
+
+/* sliders: Niels's cap travels 205 px along the black track (fitted to the mockups) */
+.ouraverb{{{cns}}} .ov-track { position: absolute; left: 270px; width: 357px; height: 40px; cursor: pointer; z-index: 21; }
+.ouraverb{{{cns}}} .ov-track-cover    { top: 28px; }
+.ouraverb{{{cns}}} .ov-track-cdensity { top: 68px; }
+.ouraverb{{{cns}}} .ov-track-cdensity .ov-cap { left: 122.5px; }
+/* defaults until the script runs (and for the screenshot): Ceiling cover 0, Cover density 3 */
+.ouraverb{{{cns}}} .ov-cap { position: absolute; left: 61px; top: 0; width: 95px; height: 40px; background-image: url(/resources/slider-cap.png{{{ns}}}); background-size: 95px 40px; pointer-events: none; }
+
+/* Place: OU button and the dot-matrix readout (a pre-rendered 2x strip, one frame per place) */
+.ouraverb{{{cns}}} .ov-btn { position: absolute; left: 20px; top: 150.5px; width: 29.5px; height: 32px; background-image: url(/resources/button.png{{{ns}}}); background-size: 29.5px 32px; cursor: pointer; z-index: 22; }
+.ouraverb{{{cns}}} .ov-btn.down { background-image: url(/resources/button-down.png{{{ns}}}); }
+.ouraverb{{{cns}}} .ov-readout { position: absolute; left: 79.5px; top: 152.25px; width: 160px; height: 26px; z-index: 20; pointer-events: none; }
+.ouraverb{{{cns}}} .ov-text { width: 160px; height: 26px; background-image: url(/resources/readout-place.png{{{ns}}}); background-size: 800px 26px; background-repeat: no-repeat; background-position: 0 0; }
+
+/* knobs: 59x59 frames, 128 frames in one horizontal 2x strip */
+.ouraverb{{{cns}}} .ov-knob {
+    position: absolute; width: 59px; height: 59px;
+    background-image: url(/resources/knob.png{{{ns}}}); background-size: auto 59px; background-repeat: no-repeat; background-position: 0 0;
+    cursor: pointer; z-index: 21;
+}
+.ouraverb{{{cns}}} .ov-tone    { left: 261.5px; top: 135px; }
+.ouraverb{{{cns}}} .ov-mix     { left: 357.5px; top: 135px; }
+.ouraverb{{{cns}}} .ov-expanse { left: 31px;    top: 226px; }
+.ouraverb{{{cns}}} .ov-surface { left: 127px;   top: 225.5px; }
+.ouraverb{{{cns}}} .ov-air     { left: 223px;   top: 225.5px; }
+.ouraverb{{{cns}}} .ov-bounce  { left: 319px;   top: 225.5px; }
+.ouraverb{{{cns}}} .ov-height  { left: 493.5px; top: 316px; }
+
+/* lights */
+.ouraverb{{{cns}}} .ov-led { position: absolute; width: 27.5px; height: 27.5px; background-image: url(/resources/led-off.png{{{ns}}}); background-size: 27.5px 27.5px; z-index: 21; }
+.ouraverb{{{cns}}} .ov-led.on { background-image: url(/resources/led-on.png{{{ns}}}); }
+.ouraverb{{{cns}}} .ov-onoff { left: 142px; top: 332px; }
+.ouraverb{{{cns}}} .ov-tails { left: 213px; top: 332px; cursor: pointer; }
+
+/* footswitch (bypass), latching: the "off" art while bypassed, the "on" art while the effect runs.
+   mod-ui's bypass widget sets the classes inverted: .on = bypassed, .off = effect on */
+.ouraverb{{{cns}}} .ov-fs { position: absolute; left: 14.5px; top: 304.5px; width: 81px; height: 81px; background-image: url(/resources/footswitch.png{{{ns}}}); background-size: 81px 81px; cursor: pointer; z-index: 21; }
+.ouraverb{{{cns}}} .ov-fs.off { background-image: url(/resources/footswitch-down.png{{{ns}}}); }
+
+.ouraverb{{{cns}}} .mod-pedal-input,
+.ouraverb{{{cns}}} .mod-pedal-output { top: 170px; }

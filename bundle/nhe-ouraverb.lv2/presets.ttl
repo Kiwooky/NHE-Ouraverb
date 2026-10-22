@@ -1,0 +1,204 @@
+@prefix lv2:  <http://lv2plug.in/ns/lv2core#> .
+@prefix pset: <http://lv2plug.in/ns/ext/presets#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<urn:mod-cookbook:nhe-ouraverb#preset-fjord-under-sail>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb> ;
+    rdfs:label "Fjord Under Sail" ;
+    lv2:port [ lv2:symbol "place" ; pset:value 0 ] ,
+        [ lv2:symbol "expanse" ; pset:value 100 ] ,
+        [ lv2:symbol "surface" ; pset:value 9 ] ,
+        [ lv2:symbol "air" ; pset:value 6 ] ,
+        [ lv2:symbol "bounce" ; pset:value 6 ] ,
+        [ lv2:symbol "cover" ; pset:value 70 ] ,
+        [ lv2:symbol "cover_density" ; pset:value 2 ] ,
+        [ lv2:symbol "cover_height" ; pset:value 20 ] ,
+        [ lv2:symbol "mix" ; pset:value 40 ] .
+
+<urn:mod-cookbook:nhe-ouraverb#preset-inner-city>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb> ;
+    rdfs:label "Inner City" ;
+    lv2:port [ lv2:symbol "place" ; pset:value 0 ] ,
+        [ lv2:symbol "expanse" ; pset:value 3 ] ,
+        [ lv2:symbol "surface" ; pset:value 10 ] ,
+        [ lv2:symbol "air" ; pset:value 8 ] ,
+        [ lv2:symbol "bounce" ; pset:value 7 ] ,
+        [ lv2:symbol "cover" ; pset:value 0 ] ,
+        [ lv2:symbol "cover_density" ; pset:value 3 ] ,
+        [ lv2:symbol "cover_height" ; pset:value 20 ] ,
+        [ lv2:symbol "mix" ; pset:value 30 ] ,
+        [ lv2:symbol "tone" ; pset:value 7 ] .
+
+<urn:mod-cookbook:nhe-ouraverb#preset-box-canyon>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb> ;
+    rdfs:label "Box Canyon" ;
+    lv2:port [ lv2:symbol "place" ; pset:value 1 ] ,
+        [ lv2:symbol "expanse" ; pset:value 100 ] ,
+        [ lv2:symbol "surface" ; pset:value 10 ] ,
+        [ lv2:symbol "air" ; pset:value 5 ] ,
+        [ lv2:symbol "bounce" ; pset:value 6 ] ,
+        [ lv2:symbol "cover" ; pset:value 0 ] ,
+        [ lv2:symbol "cover_density" ; pset:value 3 ] ,
+        [ lv2:symbol "cover_height" ; pset:value 20 ] ,
+        [ lv2:symbol "mix" ; pset:value 35 ] .
+
+<urn:mod-cookbook:nhe-ouraverb#preset-quarry>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb> ;
+    rdfs:label "Quarry" ;
+    lv2:port [ lv2:symbol "place" ; pset:value 4 ] ,
+        [ lv2:symbol "expanse" ; pset:value 180 ] ,
+        [ lv2:symbol "surface" ; pset:value 9 ] ,
+        [ lv2:symbol "air" ; pset:value 4 ] ,
+        [ lv2:symbol "bounce" ; pset:value 4 ] ,
+        [ lv2:symbol "cover" ; pset:value 0 ] ,
+        [ lv2:symbol "cover_density" ; pset:value 3 ] ,
+        [ lv2:symbol "cover_height" ; pset:value 20 ] ,
+        [ lv2:symbol "mix" ; pset:value 40 ] .
+
+<urn:mod-cookbook:nhe-ouraverb#preset-rainforest>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb> ;
+    rdfs:label "Rainforest" ;
+    lv2:port [ lv2:symbol "place" ; pset:value 3 ] ,
+        [ lv2:symbol "expanse" ; pset:value 150 ] ,
+        [ lv2:symbol "surface" ; pset:value 3 ] ,
+        [ lv2:symbol "air" ; pset:value 4 ] ,
+        [ lv2:symbol "bounce" ; pset:value 3 ] ,
+        [ lv2:symbol "cover" ; pset:value 40 ] ,
+        [ lv2:symbol "cover_density" ; pset:value 0 ] ,
+        [ lv2:symbol "cover_height" ; pset:value 30 ] ,
+        [ lv2:symbol "mix" ; pset:value 35 ] .
+
+<urn:mod-cookbook:nhe-ouraverb#preset-snowfield>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb> ;
+    rdfs:label "Snowfield" ;
+    lv2:port [ lv2:symbol "place" ; pset:value 2 ] ,
+        [ lv2:symbol "expanse" ; pset:value 100 ] ,
+        [ lv2:symbol "surface" ; pset:value 0 ] ,
+        [ lv2:symbol "air" ; pset:value 5 ] ,
+        [ lv2:symbol "bounce" ; pset:value 2 ] ,
+        [ lv2:symbol "cover" ; pset:value 0 ] ,
+        [ lv2:symbol "cover_density" ; pset:value 3 ] ,
+        [ lv2:symbol "cover_height" ; pset:value 20 ] ,
+        [ lv2:symbol "mix" ; pset:value 35 ] .
+
+<urn:mod-cookbook:nhe-ouraverb#preset-ice-cathedral>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb> ;
+    rdfs:label "Ice Cathedral" ;
+    lv2:port [ lv2:symbol "place" ; pset:value 4 ] ,
+        [ lv2:symbol "expanse" ; pset:value 60 ] ,
+        [ lv2:symbol "surface" ; pset:value 10 ] ,
+        [ lv2:symbol "air" ; pset:value 9 ] ,
+        [ lv2:symbol "bounce" ; pset:value 7 ] ,
+        [ lv2:symbol "cover" ; pset:value 100 ] ,
+        [ lv2:symbol "cover_density" ; pset:value 10 ] ,
+        [ lv2:symbol "cover_height" ; pset:value 6 ] ,
+        [ lv2:symbol "mix" ; pset:value 45 ] ,
+        [ lv2:symbol "tone" ; pset:value 8 ] .
+
+<urn:mod-cookbook:nhe-ouraverb#preset-drone-fjord>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb> ;
+    rdfs:label "Drone Fjord" ;
+    lv2:port [ lv2:symbol "place" ; pset:value 0 ] ,
+        [ lv2:symbol "expanse" ; pset:value 100 ] ,
+        [ lv2:symbol "surface" ; pset:value 9 ] ,
+        [ lv2:symbol "air" ; pset:value 6 ] ,
+        [ lv2:symbol "bounce" ; pset:value 5 ] ,
+        [ lv2:symbol "cover" ; pset:value 100 ] ,
+        [ lv2:symbol "cover_density" ; pset:value 8 ] ,
+        [ lv2:symbol "cover_height" ; pset:value 2 ] ,
+        [ lv2:symbol "mix" ; pset:value 45 ] .
+
+<urn:mod-cookbook:nhe-ouraverb#preset-pompeii-arena>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb> ;
+    rdfs:label "Pompeii Arena" ;
+    lv2:port [ lv2:symbol "place" ; pset:value 4 ] ,
+        [ lv2:symbol "expanse" ; pset:value 80 ] ,
+        [ lv2:symbol "surface" ; pset:value 9 ] ,
+        [ lv2:symbol "air" ; pset:value 6 ] ,
+        [ lv2:symbol "bounce" ; pset:value 4 ] ,
+        [ lv2:symbol "cover" ; pset:value 0 ] ,
+        [ lv2:symbol "cover_density" ; pset:value 3 ] ,
+        [ lv2:symbol "cover_height" ; pset:value 20 ] ,
+        [ lv2:symbol "mix" ; pset:value 35 ] .
+
+<urn:mod-cookbook:nhe-ouraverb#preset-epidaurus>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb> ;
+    rdfs:label "Epidaurus" ;
+    lv2:port [ lv2:symbol "place" ; pset:value 4 ] ,
+        [ lv2:symbol "expanse" ; pset:value 105 ] ,
+        [ lv2:symbol "surface" ; pset:value 10 ] ,
+        [ lv2:symbol "air" ; pset:value 7 ] ,
+        [ lv2:symbol "bounce" ; pset:value 1 ] ,
+        [ lv2:symbol "cover" ; pset:value 0 ] ,
+        [ lv2:symbol "cover_density" ; pset:value 3 ] ,
+        [ lv2:symbol "cover_height" ; pset:value 20 ] ,
+        [ lv2:symbol "mix" ; pset:value 30 ] .
+
+<urn:mod-cookbook:nhe-ouraverb#preset-konigssee>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb> ;
+    rdfs:label "Königssee" ;
+    lv2:port [ lv2:symbol "place" ; pset:value 0 ] ,
+        [ lv2:symbol "expanse" ; pset:value 60 ] ,
+        [ lv2:symbol "surface" ; pset:value 10 ] ,
+        [ lv2:symbol "air" ; pset:value 7 ] ,
+        [ lv2:symbol "bounce" ; pset:value 7 ] ,
+        [ lv2:symbol "cover" ; pset:value 0 ] ,
+        [ lv2:symbol "cover_density" ; pset:value 3 ] ,
+        [ lv2:symbol "cover_height" ; pset:value 20 ] ,
+        [ lv2:symbol "mix" ; pset:value 40 ] .
+
+<urn:mod-cookbook:nhe-ouraverb#preset-hill-country>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb> ;
+    rdfs:label "Hill Country" ;
+    lv2:port [ lv2:symbol "place" ; pset:value 2 ] ,
+        [ lv2:symbol "expanse" ; pset:value 70 ] ,
+        [ lv2:symbol "surface" ; pset:value 5 ] ,
+        [ lv2:symbol "air" ; pset:value 6 ] ,
+        [ lv2:symbol "bounce" ; pset:value 5 ] ,
+        [ lv2:symbol "cover" ; pset:value 0 ] ,
+        [ lv2:symbol "cover_density" ; pset:value 3 ] ,
+        [ lv2:symbol "cover_height" ; pset:value 20 ] ,
+        [ lv2:symbol "mix" ; pset:value 35 ] ,
+        [ lv2:symbol "tone" ; pset:value 8 ] .
+
+<urn:mod-cookbook:nhe-ouraverb#preset-bottom-of-the-well>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb> ;
+    rdfs:label "Bottom of the Well" ;
+    lv2:port [ lv2:symbol "place" ; pset:value 4 ] ,
+        [ lv2:symbol "expanse" ; pset:value 2 ] ,
+        [ lv2:symbol "surface" ; pset:value 10 ] ,
+        [ lv2:symbol "air" ; pset:value 10 ] ,
+        [ lv2:symbol "bounce" ; pset:value 4.23 ] ,
+        [ lv2:symbol "cover" ; pset:value 0 ] ,
+        [ lv2:symbol "cover_density" ; pset:value 0 ] ,
+        [ lv2:symbol "cover_height" ; pset:value 20 ] ,
+        [ lv2:symbol "mix" ; pset:value 35 ] ,
+        [ lv2:symbol "tone" ; pset:value 3.9 ] .
+
+<urn:mod-cookbook:nhe-ouraverb#preset-testing-booth>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb> ;
+    rdfs:label "Testing Booth" ;
+    lv2:port [ lv2:symbol "place" ; pset:value 4 ] ,
+        [ lv2:symbol "expanse" ; pset:value 2 ] ,
+        [ lv2:symbol "surface" ; pset:value 8.9 ] ,
+        [ lv2:symbol "air" ; pset:value 0 ] ,
+        [ lv2:symbol "bounce" ; pset:value 0 ] ,
+        [ lv2:symbol "cover" ; pset:value 52 ] ,
+        [ lv2:symbol "cover_density" ; pset:value 10 ] ,
+        [ lv2:symbol "cover_height" ; pset:value 2 ] ,
+        [ lv2:symbol "mix" ; pset:value 35 ] ,
+        [ lv2:symbol "tone" ; pset:value 0 ] .

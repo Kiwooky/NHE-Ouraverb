@@ -1,0 +1,27 @@
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+
+<urn:mod-cookbook:nhe-ouraverb>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-ouraverb.html> ;
+        modgui:stylesheet <modgui/stylesheet-ouraverb.css> ;
+        modgui:javascript <modgui/script-ouraverb.js> ;
+        modgui:screenshot <modgui/screenshot-ouraverb.png> ;
+        modgui:thumbnail <modgui/thumbnail-ouraverb.png> ;
+        modgui:brand "New Horizon" ;
+        modgui:label "Ouraverb" ;
+        modgui:monitoredOutputs [ lv2:symbol "input_level" ] ;
+        modgui:port
+        [ lv2:index 0 ; lv2:symbol "place" ;         lv2:name "Place" ; ],
+        [ lv2:index 1 ; lv2:symbol "expanse" ;       lv2:name "Expanse" ; ],
+        [ lv2:index 2 ; lv2:symbol "surface" ;       lv2:name "Surface" ; ],
+        [ lv2:index 3 ; lv2:symbol "air" ;           lv2:name "Air" ; ],
+        [ lv2:index 4 ; lv2:symbol "bounce" ;        lv2:name "Bounce" ; ],
+        [ lv2:index 5 ; lv2:symbol "cover" ;         lv2:name "Ceiling cover" ; ],
+        [ lv2:index 6 ; lv2:symbol "cover_density" ; lv2:name "Cover density" ; ],
+        [ lv2:index 7 ; lv2:symbol "cover_height" ;  lv2:name "Height" ; ],
+        [ lv2:index 8 ; lv2:symbol "mix" ;           lv2:name "Mix" ; ],
+        [ lv2:index 9 ; lv2:symbol "tails" ;         lv2:name "Tails" ; ],
+        [ lv2:index 10 ; lv2:symbol "tone" ;         lv2:name "Tone" ; ] ;
+    ] .
