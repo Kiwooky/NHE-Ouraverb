@@ -1,5 +1,25 @@
 # Changelog
 
+## 1.0.10 (build 10) — Ouraverb Stereo
+- New plugin in the same repo: **Ouraverb Stereo** (`urn:mod-cookbook:nhe-ouraverb-stereo`),
+  stereo in, stereo out, its own package file `mod-plugin-builder/nhe-ouraverb-stereo/nhe-ouraverb-stereo.mk`.
+  It is Niels's two-instance setup in one plugin: the left output is a mono Ouraverb fed the left
+  input, the right output one fed the right input. Same controls, presets and face; no input-mode
+  switch (patch one source into both inputs for the mono sound).
+- Checked: each output ignores the other input exactly; the same signal on both inputs matches the
+  mono plugin to within one 24-bit step (the last float bit, about −145 dBFS) natively and on the
+  Duo build; two inputs match the two-instance setup the same way.
+- CPU (Duo build under qemu): about 1.6× the mono plugin at Fjord defaults, 1.7× at Colosseum
+  with a cover, 1.8× at the heaviest (Forest, closed cover, Tone 10). Two instances would be 2×.
+  Each side runs its own walls, rows and rumble; what's saved is the work for the side it doesn't
+  output (taps, diffuser, cover). With Tone off centre each side needs both sides' taps.
+- Mono: the DSP moved into an `Engine` class shared by both plugins. Output sample-for-sample
+  identical to build 9 and the same speed (checked against a build of build 9). Version bump only.
+
+## 1.0.9 (build 9) — port group order
+- Port groups get `lv2:index`, so MOD's settings panel lists them Location, Distance, Cover, Mix
+  (it sorted them alphabetically before). New thumbnail from the new faceplate.
+
 ## 1.0.8 (build 8) — new faceplate, Tone on the face, port groups
 - Now a GitHub repo (playbook path B): top-level Makefile, package `.mk`, DPF as a submodule,
   check workflow, playbook tools. URI unchanged. Package file built locally for Duo (arm32) and

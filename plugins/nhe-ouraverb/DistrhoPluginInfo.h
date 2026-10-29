@@ -5,6 +5,9 @@
 #define DISTRHO_PLUGIN_BRAND       "New Horizon"
 #define DISTRHO_PLUGIN_NAME        "Ouraverb"
 #define DISTRHO_PLUGIN_URI         "urn:mod-cookbook:nhe-ouraverb"
+#define OURAVERB_LABEL             "Ouraverb"
+#define OURAVERB_DESCRIPTION       "Outdoor spaces: fjords, canyons, valleys, forests and a stepped amphitheatre, with a canopy you can pull over the sky."
+#define OURAVERB_UNIQUE_ID         d_cconst('n', 'O', 'u', 'r')
 
 #define DISTRHO_PLUGIN_HAS_UI       0
 #define DISTRHO_PLUGIN_IS_RT_SAFE   1

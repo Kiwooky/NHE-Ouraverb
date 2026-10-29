@@ -7,6 +7,18 @@ URI `urn:mod-cookbook:nhe-ouraverb` (kept from the prototype so pedalboards and 
 working) · mono in, stereo out · ReverbPlugin · DPF as a git submodule at `dpf/`, pinned to the
 commit the [MOD plugin playbook](https://github.com/Kiwooky/MOD-plugin-playbook) tests against.
 
+**Ouraverb Stereo** (`urn:mod-cookbook:nhe-ouraverb-stereo`, stereo in) lives in the same repo:
+`plugins/nhe-ouraverb-stereo/` holds only its `DistrhoPluginInfo.h` (2 inputs, its own URI,
+name, label and ID) and a one-line `.cpp` that includes the mono source; `bundle/nhe-ouraverb-stereo.lv2/`
+has its TTLs (ports shifted by one for the extra input) and borrows the mono bundle's `modgui/`
+folder at build time. One source file, two plugins: change the DSP once, both follow. Keep the
+two TTLs, the presets and `lv2:microVersion` in step.
+
+How it works: `Engine` is one mono Ouraverb. Mono runs one engine for both outputs. Stereo runs
+two, the first fed the left input and rendering only the left output, the second the right; the
+work only the unheard side needs (its taps, diffuser, cover) is compiled out with template
+flags, which is where the CPU saving over two instances comes from.
+
 ## Build and test
 
 ```sh
@@ -15,15 +27,21 @@ make                                   # bin/nhe-ouraverb.lv2
 tools/check.sh --src plugins/nhe-ouraverb --bundle bundle/nhe-ouraverb.lv2 --test tests/test_nhe_ouraverb.py
 python3 tools/face_click_test.py bundle/nhe-ouraverb.lv2
 python3 tools/face_prototype.py bundle/nhe-ouraverb.lv2 bench.html   # face test bench in a browser
+
+make NAME=nhe-ouraverb-stereo          # bin/nhe-ouraverb-stereo.lv2
+bash tools/check_stereo.sh             # the stereo plugin's gate (also builds mono to compare)
 ```
 
 `check.sh` builds native, Duo (arm32) and Duo X/Dwarf (arm64) through the builder's own hooks,
 compares the hand-written TTL with DPF's generator, and runs the audio tests natively and on the
-Duo build under qemu (74 tests). Packages: `g++ g++-arm-linux-gnueabihf g++-aarch64-linux-gnu
+Duo build under qemu (74 tests). `check_stereo.sh` does the same for the stereo plugin
+(32 tests: each output ignores the other input exactly; one signal on both inputs = mono to
+within a 24-bit step; two inputs = the two-instance setup). Packages: `g++ g++-arm-linux-gnueabihf g++-aarch64-linux-gnu
 qemu-user lilv-utils`, Python `numpy scipy rdflib` (plus `playwright pillow` for the face tools).
 
 **Releasing:** push, then set `NHE_OURAVERB_VERSION` in `mod-plugin-builder/nhe-ouraverb/nhe-ouraverb.mk`
-to the full 40-character commit hash and upload that file at builder.mod.audio. Bump
+to the full 40-character commit hash and upload that file at builder.mod.audio. Same for
+`NHE_OURAVERB_STEREO_VERSION` in `mod-plugin-builder/nhe-ouraverb-stereo/nhe-ouraverb-stereo.mk`. Bump
 `lv2:microVersion` (TTL) and `d_version()` (code) together on every release: MOD caches the face
 and ports by version.
 
@@ -52,10 +70,13 @@ cover (filtered feedback comb, Height apart) → soft limit on the wet → Mix.
   Bottom of the Well (+6.4) and Testing Booth (+5.5), kept as made on the unit.
 - Worst cases (rock, Bounce 10, closed ice cover; and Tone 10 at Expanse 200): peaks ≤ 0.75,
   every tail decays.
+- Stereo: each output ignores the other input exactly; same signal on both = mono within
+  1.5e-8 (native) / 6e-8 (Duo build), below one 24-bit step.
 - CPU, relative only (Duo build under qemu): Fjord defaults about 1.0× NHE Taj Mahal; Tone off
   centre adds about 0.4×; heaviest case (Forest, closed cover, Tone 10) about 1.95×. Moving Expanse
-  or Surface costs more while it glides. *The Duo's own meter is the real number.*
-- Memory: three 4 MB lines (sized for 96 kHz), the rumble's 1 MB, plus 0.5 MB.
+  or Surface costs more while it glides. *The Duo's own meter is the real number.* Ouraverb Stereo: 1.6× mono at Fjord defaults,
+  1.8× in the heaviest case (two instances: 2×).
+- Memory: three 4 MB lines (sized for 96 kHz), the rumble's 1 MB, plus 0.5 MB. Stereo: twice that.
 
 ## Face
 

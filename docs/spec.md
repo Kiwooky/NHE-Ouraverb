@@ -9,6 +9,7 @@
 | Category | ReverbPlugin |
 | Target | MOD Duo (OS 1.14 RC); builds for Duo X / Dwarf too |
 | Face | Niels's artwork (build 2): orbital display, sliders, OU + readout |
+| Stereo version | Ouraverb Stereo, `urn:mod-cookbook:nhe-ouraverb-stereo` (build 10): stereo in, same source, controls and face |
 
 ## The idea
 
@@ -92,3 +93,15 @@ new place: a staircase alone, with no arena around it.
 - Every scene and preset within ±3 dB (presets ±4 dB) of bypass, no ticks.
 - Worst case (rock, Bounce 10, ice canopy closed): peak < 1.0, decays at least 20 dB by 38 s.
 - Place changes, Expanse moves: no clicks or ticks.
+
+## Ouraverb Stereo (each is a test in `tests/test_nhe_ouraverb_stereo.py`)
+
+Two mono Ouraverbs in one plugin, as Niels patched it by hand: the left output is a mono Ouraverb
+fed the left input, the right output one fed the right input. No input-mode switch.
+
+- The left output ignores the right input and the right output the left, exactly, at every
+  place and through live changes and bypass.
+- The same signal on both inputs is the mono plugin, to within one 24-bit step.
+- Two inputs are the left output of a mono fed L and the right output of a mono fed R, the same way.
+- Levels, bypass (Tails on and off, each side dry on its own side), torture and silence as mono;
+  Input Level follows the louder input.

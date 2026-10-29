@@ -126,6 +126,15 @@ Mono in, stereo out. Most settings sit comfortably on a Duo. The heaviest ones (
 closed cover with Tone turned up) use about twice what a lush hall reverb does, so keep an eye on
 the CPU meter.
 
+### OurAVerb Stereo
+
+For stereo sources (a keyboard, a stereo chorus before it) there's a second plugin, **Ouraverb
+Stereo**: upload `mod-plugin-builder/nhe-ouraverb-stereo/nhe-ouraverb-stereo.mk` the same way. It
+is two OurAVerbs in one: the left input makes the left side of the space, the right input the
+right. Same controls, presets and face. Patch one source into both inputs and it sounds exactly
+like the mono one. It uses about 1.6 to 1.8 times the CPU of the mono version (two separate
+copies would be twice).
+
 ## Credits and licence
 
 Designed by Niels, New Horizon Electronics. Code GPL-3.0-or-later (`LICENSE`). Artwork © 2026 New

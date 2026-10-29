@@ -1,0 +1,79 @@
+@prefix lv2:  <http://lv2plug.in/ns/lv2core#> .
+@prefix pset: <http://lv2plug.in/ns/ext/presets#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<urn:mod-cookbook:nhe-ouraverb-stereo>
+    a lv2:Plugin , lv2:ReverbPlugin ;
+    lv2:binary <nhe-ouraverb-stereo_dsp.so> ;
+    rdfs:seeAlso <nhe-ouraverb-stereo.ttl> , <modgui.ttl> .
+
+# Factory presets
+<urn:mod-cookbook:nhe-ouraverb-stereo#preset-fjord-under-sail>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb-stereo> ;
+    rdfs:seeAlso <presets.ttl> .
+
+<urn:mod-cookbook:nhe-ouraverb-stereo#preset-inner-city>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb-stereo> ;
+    rdfs:seeAlso <presets.ttl> .
+
+<urn:mod-cookbook:nhe-ouraverb-stereo#preset-box-canyon>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb-stereo> ;
+    rdfs:seeAlso <presets.ttl> .
+
+<urn:mod-cookbook:nhe-ouraverb-stereo#preset-quarry>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb-stereo> ;
+    rdfs:seeAlso <presets.ttl> .
+
+<urn:mod-cookbook:nhe-ouraverb-stereo#preset-rainforest>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb-stereo> ;
+    rdfs:seeAlso <presets.ttl> .
+
+<urn:mod-cookbook:nhe-ouraverb-stereo#preset-snowfield>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb-stereo> ;
+    rdfs:seeAlso <presets.ttl> .
+
+<urn:mod-cookbook:nhe-ouraverb-stereo#preset-ice-cathedral>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb-stereo> ;
+    rdfs:seeAlso <presets.ttl> .
+
+<urn:mod-cookbook:nhe-ouraverb-stereo#preset-drone-fjord>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb-stereo> ;
+    rdfs:seeAlso <presets.ttl> .
+
+<urn:mod-cookbook:nhe-ouraverb-stereo#preset-pompeii-arena>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb-stereo> ;
+    rdfs:seeAlso <presets.ttl> .
+
+<urn:mod-cookbook:nhe-ouraverb-stereo#preset-epidaurus>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb-stereo> ;
+    rdfs:seeAlso <presets.ttl> .
+
+<urn:mod-cookbook:nhe-ouraverb-stereo#preset-konigssee>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb-stereo> ;
+    rdfs:seeAlso <presets.ttl> .
+
+<urn:mod-cookbook:nhe-ouraverb-stereo#preset-hill-country>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb-stereo> ;
+    rdfs:seeAlso <presets.ttl> .
+
+<urn:mod-cookbook:nhe-ouraverb-stereo#preset-bottom-of-the-well>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb-stereo> ;
+    rdfs:seeAlso <presets.ttl> .
+
+<urn:mod-cookbook:nhe-ouraverb-stereo#preset-testing-booth>
+    a pset:Preset ;
+    lv2:appliesTo <urn:mod-cookbook:nhe-ouraverb-stereo> ;
+    rdfs:seeAlso <presets.ttl> .
