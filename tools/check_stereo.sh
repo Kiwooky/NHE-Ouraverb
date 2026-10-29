@@ -12,8 +12,9 @@ mkdir -p "$S/plugins/nhe-ouraverb-stereo" "$S/bundle"
 cp plugins/nhe-ouraverb-stereo/DistrhoPluginInfo.h "$S/plugins/nhe-ouraverb-stereo/"
 cp plugins/nhe-ouraverb/OuraverbPlugin.cpp "$S/plugins/nhe-ouraverb-stereo/OuraverbStereoPlugin.cpp"
 sed 's#^FILES_DSP.*#FILES_DSP = OuraverbStereoPlugin.cpp#' plugins/nhe-ouraverb-stereo/Makefile > "$S/plugins/nhe-ouraverb-stereo/Makefile"
-cp -r bundle/nhe-ouraverb-stereo.lv2 "$S/bundle/"
-cp -r bundle/nhe-ouraverb.lv2/modgui "$S/bundle/nhe-ouraverb-stereo.lv2/"
+mkdir -p "$S/bundle/nhe-ouraverb-stereo.lv2"
+cp -r bundle/nhe-ouraverb.lv2/modgui "$S/bundle/nhe-ouraverb-stereo.lv2/"   # the shared face,
+cp -r bundle/nhe-ouraverb-stereo.lv2/. "$S/bundle/nhe-ouraverb-stereo.lv2/"  # then stereo's own images
 
 # the mono plugin to compare against (check.sh fetches DPF into the cache; do the same here)
 if [ -d "$CACHE/dpf" ]; then

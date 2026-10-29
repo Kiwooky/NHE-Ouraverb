@@ -10,8 +10,11 @@ commit the [MOD plugin playbook](https://github.com/Kiwooky/MOD-plugin-playbook)
 **Ouraverb Stereo** (`urn:mod-cookbook:nhe-ouraverb-stereo`, stereo in) lives in the same repo:
 `plugins/nhe-ouraverb-stereo/` holds only its `DistrhoPluginInfo.h` (2 inputs, its own URI,
 name, label and ID) and a one-line `.cpp` that includes the mono source; `bundle/nhe-ouraverb-stereo.lv2/`
-has its TTLs (ports shifted by one for the extra input) and borrows the mono bundle's `modgui/`
-folder at build time. One source file, two plugins: change the DSP once, both follow. Keep the
+has its TTLs (ports shifted by one for the extra input) and only the face files that differ
+(`modgui/`: the panel with the STEREO badge, screenshot, thumbnail); the build copies the mono
+bundle's `modgui/` first and lays these over it. A face change to the mono panel needs the badge
+pasted onto the new panel too (it sits at 50,72 – 195,89 on the 2x image), then re-render with
+`tools/render_face.py` on a merged copy. One source file, two plugins: change the DSP once, both follow. Keep the
 two TTLs, the presets and `lv2:microVersion` in step.
 
 How it works: `Engine` is one mono Ouraverb. Mono runs one engine for both outputs. Stereo runs

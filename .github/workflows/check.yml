@@ -16,6 +16,10 @@ jobs:
           sudo apt-get install -y g++ g++-arm-linux-gnueabihf g++-aarch64-linux-gnu qemu-user lilv-utils
           pip install numpy scipy rdflib
       - name: Gate
-        run: tools/check.sh --src plugins/nhe-ouraverb --bundle bundle/nhe-ouraverb.lv2 --test tests/test_nhe_ouraverb.py
+        run: bash tools/check.sh --src plugins/nhe-ouraverb --bundle bundle/nhe-ouraverb.lv2 --test tests/test_nhe_ouraverb.py
+      - name: Gate (stereo)
+        run: bash tools/check_stereo.sh
       - name: Repo build
-        run: make NOOPT=true
+        run: |
+          make NOOPT=true
+          make NOOPT=true NAME=nhe-ouraverb-stereo

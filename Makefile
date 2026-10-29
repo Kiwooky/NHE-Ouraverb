@@ -1,7 +1,8 @@
 #!/usr/bin/make -f
 # Path B (repo) top-level build. Path A (single .mk) doesn't use this file.
 #
-#   make                      build bin/<bundle>.lv2 (DSP + TTL + face)
+#   make                      build bin/<bundle>.lv2 (DSP + TTL + face): the mono plugin
+#   make NAME=nhe-ouraverb-stereo   the stereo-in plugin (same source, same face)
 #   make install DESTDIR=...  install into $(DESTDIR)$(PREFIX)/lib/lv2
 #   make clean
 #
@@ -9,7 +10,7 @@
 # mod-plugin-builder and builder.mod.audio pass in.
 
 PREFIX  ?= /usr/local
-NAME    := nhe-ouraverb
+NAME    ?= nhe-ouraverb
 BUNDLE  := $(NAME).lv2
 
 all: plugin bundle
@@ -18,6 +19,9 @@ plugin:
 	$(MAKE) -C plugins/$(NAME)
 
 bundle: plugin
+	# the stereo bundle borrows the mono face; its own modgui/ files (panel with the STEREO
+	# badge, screenshot, thumbnail) then go over the top
+	[ "$(NAME)" = nhe-ouraverb ] || cp -r bundle/nhe-ouraverb.lv2/modgui bin/$(BUNDLE)/
 	cp -r bundle/$(BUNDLE)/. bin/$(BUNDLE)/
 
 install: all

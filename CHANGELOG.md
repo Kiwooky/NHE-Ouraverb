@@ -4,8 +4,9 @@
 - New plugin in the same repo: **Ouraverb Stereo** (`urn:mod-cookbook:nhe-ouraverb-stereo`),
   stereo in, stereo out, its own package file `mod-plugin-builder/nhe-ouraverb-stereo/nhe-ouraverb-stereo.mk`.
   It is Niels's two-instance setup in one plugin: the left output is a mono Ouraverb fed the left
-  input, the right output one fed the right input. Same controls, presets and face; no input-mode
-  switch (patch one source into both inputs for the mono sound).
+  input, the right output one fed the right input. Same controls, presets and face, with
+  Niels's STEREO badge over the logo; no input-mode switch (patch one source into both inputs
+  for the mono sound).
 - Checked: each output ignores the other input exactly; the same signal on both inputs matches the
   mono plugin to within one 24-bit step (the last float bit, about −145 dBFS) natively and on the
   Duo build; two inputs match the two-instance setup the same way.
