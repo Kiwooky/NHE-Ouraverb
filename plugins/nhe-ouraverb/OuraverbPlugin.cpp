@@ -650,7 +650,7 @@ protected:
     const char* getDescription() const override { return OURAVERB_DESCRIPTION; }
     const char* getMaker()       const override { return DISTRHO_PLUGIN_BRAND; }
     const char* getLicense()     const override { return "GPL-3.0-or-later"; }
-    uint32_t    getVersion()     const override { return d_version(1, 0, 11); }   // = lv2:minorVersion 2, microVersion 10
+    uint32_t    getVersion()     const override { return d_version(1, 0, 11); }   // = lv2:minorVersion 2, microVersion 11
     int64_t     getUniqueId()    const override { return OURAVERB_UNIQUE_ID; }
 
     void initParameter(uint32_t index, Parameter& p) override

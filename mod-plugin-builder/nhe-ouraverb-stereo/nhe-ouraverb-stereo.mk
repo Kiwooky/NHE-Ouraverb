@@ -14,7 +14,7 @@
 ######################################
 
 # <- after your first push, replace the zeros with the full 40-character commit hash
-NHE_OURAVERB_STEREO_VERSION = 860a64a379f7b46b1541cfa60a0b6a45877212cc
+NHE_OURAVERB_STEREO_VERSION = ada20a9c89e12423ba709dfa60422990bcc3bb84
 NHE_OURAVERB_STEREO_SITE = https://github.com/Kiwooky/NHE-Ouraverb.git
 NHE_OURAVERB_STEREO_SITE_METHOD = git
 NHE_OURAVERB_STEREO_GIT_SUBMODULES = y
