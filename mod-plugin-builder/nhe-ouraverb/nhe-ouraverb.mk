@@ -14,7 +14,7 @@
 ######################################
 
 # <- after your first push, replace the zeros with the full 40-character commit hash
-NHE_OURAVERB_VERSION = d08c83909cd9e8e4615ba92147c057873ec3d565
+NHE_OURAVERB_VERSION = 860a64a379f7b46b1541cfa60a0b6a45877212cc
 NHE_OURAVERB_SITE = https://github.com/Kiwooky/NHE-Ouraverb.git
 NHE_OURAVERB_SITE_METHOD = git
 NHE_OURAVERB_GIT_SUBMODULES = y

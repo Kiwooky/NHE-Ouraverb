@@ -220,6 +220,11 @@ for pr in sorted(g.subjects(rdflib.RDF.type, PS.Preset)):
     check('preset "%s": within +-%d dB of bypass, peak < 1, no ticks' % (g.value(pr, RS.label), lim),
           abs(d) < lim and np.abs(y).max() < 1.0 and tick_count(y[:, 0], sr) == 0 and tick_count(y[:, 1], sr) == 0,
           '%+.1f dB, peak %.2f' % (d, np.abs(y).max()))
+    # presets leave Mix alone (many players run it 100 % wet): so each must also be safe fully wet
+    y = p.run(xp, sr, **dict(vals, mix=100))
+    check('preset "%s" sets no Mix, and fully wet: peak < 1, no ticks' % g.value(pr, RS.label),
+          'mix' not in vals and np.abs(y).max() < 1.0 and tick_count(y[:, 0], sr) == 0 and tick_count(y[:, 1], sr) == 0,
+          'peak %.2f' % np.abs(y).max())
 
 # Inner City is a Fjord at 3 %: building fronts 13 m apart, a slap-flutter
 y = p.run(impulse(sr, 0.6), sr, expanse=3, **CLEAN)

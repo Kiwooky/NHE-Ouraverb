@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.11 (build 11) — presets leave Mix alone
+- No factory preset sets **Mix** any more, in both plugins: loading one changes the space and
+  keeps your Mix where it was, so a 100 % wet setup stays 100 % wet. (They used to set 30 … 45 %.)
+- New test: no preset sets Mix, and every preset fully wet peaks under 1.0 with no ticks
+  (quietest fully wet: Snowfield and Rainforest, by design).
+
 ## 1.0.10 (build 10) — Ouraverb Stereo
 - New plugin in the same repo: **Ouraverb Stereo** (`urn:mod-cookbook:nhe-ouraverb-stereo`),
   stereo in, stereo out, its own package file `mod-plugin-builder/nhe-ouraverb-stereo/nhe-ouraverb-stereo.mk`.

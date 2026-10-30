@@ -37,7 +37,7 @@ bash tools/check_stereo.sh             # the stereo plugin's gate (also builds m
 
 `check.sh` builds native, Duo (arm32) and Duo X/Dwarf (arm64) through the builder's own hooks,
 compares the hand-written TTL with DPF's generator, and runs the audio tests natively and on the
-Duo build under qemu (74 tests). `check_stereo.sh` does the same for the stereo plugin
+Duo build under qemu (88 tests). `check_stereo.sh` does the same for the stereo plugin
 (32 tests: each output ignores the other input exactly; one signal on both inputs = mono to
 within a 24-bit step; two inputs = the two-instance setup). Packages: `g++ g++-arm-linux-gnueabihf g++-aarch64-linux-gnu
 qemu-user lilv-utils`, Python `numpy scipy rdflib` (plus `playwright pillow` for the face tools).

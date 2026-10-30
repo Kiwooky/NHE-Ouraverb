@@ -91,6 +91,7 @@ new place: a staircase alone, with no arena around it.
 - Air 0 (dense): the 3.7 s echo much darker than the 0.42 s one.
 - Canopy at 2 m: peaks at 86 Hz multiples; level within ±4 dB of Cover 0; Cover height swept live without ticks.
 - Every scene and preset within ±3 dB (presets ±4 dB) of bypass, no ticks.
+- No preset sets Mix (players keep their own balance); every preset fully wet: peak < 1.0, no ticks.
 - Worst case (rock, Bounce 10, ice canopy closed): peak < 1.0, decays at least 20 dB by 38 s.
 - Place changes, Expanse moves: no clicks or ticks.
 

@@ -98,6 +98,8 @@ The big display shows the space you've built:
 
 ## Presets
 
+Presets set the space, not the balance: loading one leaves your Mix where it is.
+
 | Preset | What it is |
 | --- | --- |
 | Inner City | A fjord shrunk to a street: building fronts slapping back and forth |
