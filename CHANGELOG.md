@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.12 (build 12) — preset names in the manifest
+
+- Preset names are now listed in `manifest.ttl` as well as `presets.ttl` (`rdfs:label`, as DPF writes them), so a host can show the names without opening the presets file. Same presets, same sound.
+
 ## 1.0.11 (build 11) — presets leave Mix alone
 - No factory preset sets **Mix** any more, in both plugins: loading one changes the space and
   keeps your Mix where it was, so a 100 % wet setup stays 100 % wet. (They used to set 30 … 45 %.)
